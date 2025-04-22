@@ -78,7 +78,7 @@ function moveElevatorToFloor(elevator, targetFloor, button) {
     const timeTaken = ((end - start) / 1000).toFixed(2);
     // timeTakenElement.textContent = `${timeTaken}s`;
 
-    new Audio('beep_short.ogg').play();
+    new Audio('assets/beep_short.ogg').play();
 
     elevator.element.classList.remove('red');
     elevator.element.classList.add('green');
