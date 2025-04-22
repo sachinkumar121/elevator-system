@@ -1,0 +1,115 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  text-align: center;
+}
+
+th,
+td {
+  border: 1px solid #aaa;
+  padding: 8px;
+  height: 80px;
+  position: relative;
+  width: 100px;
+  /* or any fixed value */
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+button.call-btn {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+button.call-btn.waiting {
+  background-color: red;
+  color: white;
+}
+
+button.call-btn.arrived {
+  background-color: green;
+  color: white;
+}
+
+.elevator-icon {
+  width: 30px;
+  height: 60px;
+}
+
+.red .elevator-icon {
+  filter: hue-rotate(0deg) saturate(5);
+}
+
+.green .elevator-icon {
+  filter: hue-rotate(100deg) saturate(3);
+}
+
+.black .elevator-icon {
+  filter: grayscale(1) brightness(0.3);
+}
+
+.waiting-time {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 12px;
+  color: orange;
+}
+
+
+#elevators {
+  position: absolute;
+  left: 200px;
+  bottom: 0;
+  display: flex;
+  gap: 20px;
+  height: 100%;
+  align-items: flex-end;
+  width: calc(100% - 400px);
+  justify-content: space-between;
+}
+
+.elevator {
+  /* height: 80px; */
+  position: relative;
+  transition: transform 0.5s ease;
+  padding: 0 20px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.elevator-icon {
+  width: 35px;
+  height: 35px;
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(7500%) hue-rotate(0deg) brightness(100%) contrast(100%);
+  transition: filter 0.3s ease;
+}
+
+.elevator.red .elevator-icon {
+  filter: brightness(0) saturate(100%) invert(18%) sepia(100%) saturate(7480%) hue-rotate(-9deg) brightness(98%) contrast(126%);
+}
+
+.elevator.green .elevator-icon {
+  filter: brightness(0) saturate(100%) invert(50%) sepia(81%) saturate(700%) hue-rotate(85deg) brightness(91%) contrast(95%);
+}
+
+.elevator.black .elevator-icon {
+  filter: none;
+}
+
+td {
+  height: 80px;
+  width: 80px;
+  box-sizing: border-box;
+}

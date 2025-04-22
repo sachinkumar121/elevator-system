@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevator System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main" style="position: relative;">
+        <table id="building">
+            <thead>
+                <tr>
+                    <th>Floor</th>
+                    <th>Elevator 1</th>
+                    <th>Elevator 2</th>
+                    <th>Elevator 3</th>
+                    <th>Elevator 4</th>
+                    <th>Elevator 5</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-floor="9">
+                    <td>9th Floor</td>
+                    <td class="cell" data-floor="9" data-elevator="0"></td>
+                    <td class="cell" data-floor="9" data-elevator="1"></td>
+                    <td class="cell" data-floor="9" data-elevator="2"></td>
+                    <td class="cell" data-floor="9" data-elevator="3"></td>
+                    <td class="cell" data-floor="9" data-elevator="4"></td>
+                    <td><button class="call-btn" data-floor="9">Call</button></td>
+                </tr>
+                <tr data-floor="8">
+                    <td>8th Floor</td>
+                    <td class="cell" data-floor="8" data-elevator="0"></td>
+                    <td class="cell" data-floor="8" data-elevator="1"></td>
+                    <td class="cell" data-floor="8" data-elevator="2"></td>
+                    <td class="cell" data-floor="8" data-elevator="3"></td>
+                    <td class="cell" data-floor="8" data-elevator="4"></td>
+                    <td><button class="call-btn" data-floor="8">Call</button></td>
+                </tr>
+                <tr data-floor="7">
+                    <td>7th Floor</td>
+                    <td class="cell" data-floor="7" data-elevator="0"></td>
+                    <td class="cell" data-floor="7" data-elevator="1"></td>
+                    <td class="cell" data-floor="7" data-elevator="2"></td>
+                    <td class="cell" data-floor="7" data-elevator="3"></td>
+                    <td class="cell" data-floor="7" data-elevator="4"></td>
+                    <td><button class="call-btn" data-floor="7">Call</button></td>
+                </tr>
+                <tr data-floor="6">
+                    <td>6th Floor</td>
+                    <td class="cell" data-floor="6" data-elevator="0"></td>
+                    <td class="cell" data-floor="6" data-elevator="1"></td>
+                    <td class="cell" data-floor="6" data-elevator="2"></td>
+                    <td class="cell" data-floor="6" data-elevator="3"></td>
+                    <td class="cell" data-floor="6" data-elevator="4"></td>
+                    <td><button class="call-btn" data-floor="6">Call</button></td>
+                </tr>
+                <tr data-floor="5">
+                    <td>5th Floor</td>
+                    <td class="cell" data-floor="5" data-elevator="0"></td>
+                    <td class="cell" data-floor="5" data-elevator="1"></td>
+                    <td class="cell" data-floor="5" data-elevator="2"></td>
+                    <td class="cell" data-floor="5" data-elevator="3"></td>
+                    <td class="cell" data-floor="5" data-elevator="4"></td>
+                    <td><button class="call-btn" data-floor="5">Call</button></td>
+                </tr>
+                <tr data-floor="4">
+                    <td>4th Floor</td>
+                    <td class="cell" data-floor="4" data-elevator="0"></td>
+                    <td class="cell" data-floor="4" data-elevator="1"></td>
+                    <td class="cell" data-floor="4" data-elevator="2"></td>
+                    <td class="cell" data-floor="4" data-elevator="3"></td>
+                    <td class="cell" data-floor="4" data-elevator="4"></td>
+                    <td><button class="call-btn" data-floor="4">Call</button></td>
+                </tr>
+                <tr data-floor="3">
+                    <td>3th Floor</td>
+                    <td class="cell" data-floor="3" data-elevator="0"></td>
+                    <td class="cell" data-floor="3" data-elevator="1"></td>
+                    <td class="cell" data-floor="3" data-elevator="2"></td>
+                    <td class="cell" data-floor="3" data-elevator="3"></td>
+                    <td class="cell" data-floor="3" data-elevator="4"></td>
+                    <td><button class="call-btn" data-floor="3">Call</button></td>
+                </tr>
+                <tr data-floor="2">
+                    <td>2nd Floor</td>
+                    <td class="cell" data-floor="2" data-elevator="0"></td>
+                    <td class="cell" data-floor="2" data-elevator="1"></td>
+                    <td class="cell" data-floor="2" data-elevator="2"></td>
+                    <td class="cell" data-floor="2" data-elevator="3"></td>
+                    <td class="cell" data-floor="2" data-elevator="4"></td>
+                    <td><button class="call-btn" data-floor="2">Call</button></td>
+                </tr>
+                <tr data-floor="1">
+                    <td>1st Floor</td>
+                    <td class="cell" data-floor="1" data-elevator="0"></td>
+                    <td class="cell" data-floor="1" data-elevator="1"></td>
+                    <td class="cell" data-floor="1" data-elevator="2"></td>
+                    <td class="cell" data-floor="1" data-elevator="3"></td>
+                    <td class="cell" data-floor="1" data-elevator="4"></td>
+                    <td><button class="call-btn" data-floor="1">Call</button></td>
+                </tr>
+                <tr data-floor="0">
+                    <td>Ground Floor</td>
+                    <td class="cell" data-floor="0" data-elevator="0">
+                        <div class="elevator black" id="elevator-0" data-id="0">
+                            <img src="icons8-elevator.svg" class="elevator-icon" alt="First Elevator">
+                        </div>
+                    </td>
+                    <td class="cell" data-floor="0" data-elevator="1">
+                        <div class="elevator black" id="elevator-1" data-id="1">
+                            <img src="icons8-elevator.svg" class="elevator-icon" alt="Second Elevator">
+                        </div>
+                    </td>
+                    <td class="cell" data-floor="0" data-elevator="2">
+                        <div class="elevator black" id="elevator-2" data-id="2">
+                            <img src="icons8-elevator.svg" class="elevator-icon" alt="Third Elevator">
+                        </div>
+                    </td>
+                    <td class="cell" data-floor="0" data-elevator="3">
+                        <div class="elevator black" id="elevator-3" data-id="3">
+                            <img src="icons8-elevator.svg" class="elevator-icon" alt="Fourth Elevator">
+                        </div>
+                    </td>
+                    <td class="cell" data-floor="0" data-elevator="4">
+                        <div class="elevator black" id="elevator-4" data-id="4">
+                            <img src="icons8-elevator.svg" class="elevator-icon" alt="fifth Elevator">
+                        </div>
+                    </td>
+                    <td><button class="call-btn" data-floor="0">Call</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
