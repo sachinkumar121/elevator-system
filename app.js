@@ -19,8 +19,6 @@ function setupElevators() {
 }
 
 function handleElevatorRequest(floor, button) {
-  button.textContent = 'Waiting';
-  button.classList.add('waiting');
   button.disabled = true;
 
   // Find nearest available elevator
