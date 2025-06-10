@@ -48,6 +48,7 @@ function findClosestAvailableElevator(floor) {
 }
 
 function moveElevatorToFloor(elevator, targetFloor, button) {
+  let arrowClass = elevator.currentFloor < targetFloor ? "up" : "down";
   const floorsToTravel = Math.abs(elevator.currentFloor - targetFloor);
   const travelTime = floorsToTravel * SPEED_PER_FLOOR;
   const start = performance.now();
@@ -60,6 +61,7 @@ function moveElevatorToFloor(elevator, targetFloor, button) {
   // timeTravelElement.textContent = `${travelTime}s`;
   elevator.element.classList.remove('green', 'black');
   elevator.element.classList.add('red');
+  elevator.element.classList.add(arrowClass);
   elevator.element.style.transition = `transform ${travelTime}ms ease-in-out`;
 
   // Move up/down: translateY goes negative to go "up"
@@ -68,6 +70,8 @@ function moveElevatorToFloor(elevator, targetFloor, button) {
 
   elevator.currentFloor = targetFloor;
   elevator.busy = true;
+  // elevator.querySelector('span.arrow').remove();
+  // elevator.element.insertAdjacentHTML('beforeend', `<span id="arrow">${arrow}</span>`)
 
   let outerTimer = setTimeout(() => {
     timeCell.querySelector('span.waiting-time').remove();
@@ -84,6 +88,7 @@ function moveElevatorToFloor(elevator, targetFloor, button) {
     button.textContent = 'Arrived';
     button.classList.remove('waiting');
     button.classList.add('arrived');
+    elevator.element.classList.remove('up', 'down');
 
     let innerTimer = setTimeout(() => {
       elevator.element.classList.remove('green');
@@ -94,6 +99,7 @@ function moveElevatorToFloor(elevator, targetFloor, button) {
       button.disabled = false;
 
       elevator.busy = false;
+
 
       if (queue.length > 0) {
         const next = queue.shift();
@@ -154,5 +160,29 @@ function msToReadableTime(ms) {
   return parts.slice(0, -1).join(', ') + ' and ' + parts[parts.length - 1];
 }
 
+function stopAllElevator() {
+
+}
+
+function sendTheElevatorToTheGround() {
+  // Find nearest available elevator
+  const availableElevatorsAtGround = elevators.find(e => e.currentFloor != 0);
+  if (!availableElevatorsAtGround) {
+
+  }
+
+  if (availableElevators.length === 0) {
+    queue.push({ floor, button });
+    return;
+  }
+
+  const closest = availableElevators.reduce((prev, curr) => {
+    return Math.abs(curr.currentFloor - floor) < Math.abs(prev.currentFloor - floor) ? curr : prev
+
+  });
+
+  moveElevatorToFloor(closest, floor, button);
+
+}
 
 main();

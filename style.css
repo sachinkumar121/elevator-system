@@ -101,3 +101,28 @@ td {
   width: 80px;
   box-sizing: border-box;
 }
+
+.elevator.black:after{
+  content: '⬤';
+  background-size: 20px 20px;
+  position:absolute;
+  width:20px;
+  height:20px;
+  margin-right:-70px;
+}
+.elevator.up:after{
+  content: '↑';
+  background-size: 20px 20px;
+  position:absolute;
+  width:20px;
+  height:20px;
+  margin-right:-70px;
+}
+.elevator.down:after{
+  content: '↓';
+  background-size: 20px 20px;
+  position:absolute;
+  width:20px;
+  height:20px;
+  margin-right:-70px;
+}
